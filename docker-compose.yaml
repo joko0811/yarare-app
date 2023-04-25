@@ -1,6 +1,7 @@
 version: "3"
 services:
-  my-apache-php:
+  my-almalinux-php:
+    platform: linux/arm64
     privileged: true
     build:
       context: ./
