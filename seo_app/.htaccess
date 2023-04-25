@@ -1,0 +1,5 @@
+RewriteEngine On
+RewriteCond %{REQUEST_URI} ^/~seo/ [NC]
+RewriteRule ^(.*) /~seo/user_kintai.php [R=301,L]
+RewriteCond %{REQUEST_URI} ^/~seo/user_kintai.php [NC]
+RewriteRule ^(.*) /~seo/ [R=301,L]
