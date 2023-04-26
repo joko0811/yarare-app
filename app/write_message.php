@@ -1,17 +1,18 @@
 <?php
   # メッセージの書き出し
-  $file_path = realpath("message/" . @$_POST["username"]);
-  if (file_exists($file_path)){
-    touch($file_path);
-  }
+  $file_path = "message/" . @$_POST["username"];
   $write_flag = file_put_contents($file_path, @$_POST["message"] . "\n", FILE_APPEND);
+
+  # 禁止文字列が含まれていないかチェック
+  $check_username = strpos(@$_POST["username"], "unko")
 
   # ログ出力
   $time_data = time();
-  $log_text = "[w] " . date('Y:m:d:H:i:s', $time_data) . " " . @$_POST["username"] . "\n";
+  $log_text = "[w] " . date('Y:m:d:H:i:s', $time_data) . " " . htmlspecialchars(@$_POST["username"]) . "\n";
+  # 相対パスから絶対パスへの変換
   $message_log_path = realpath("log/message.log");
   if($message_log_path === false){
-    touch($file_path)
+    touch($message_log_path);
   }
   file_put_contents($message_log_path, $log_text, FILE_APPEND);
 ?>
