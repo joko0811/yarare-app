@@ -12,4 +12,4 @@ $ docker compose up
 $ ssh manage@localhost -p 20022
 ```
 
-rootのパスワードはrootです()。**パブリックなLAN内では絶対に実行しないようにしてください。**
+manageのパスワードはmanage,rootのパスワードはrootです()。**パブリックなLAN内では十分に気をつけて実行してください。**
