@@ -37,11 +37,9 @@ RUN sed -i 's/AllowOverride None/AllowOverride All/g' /etc/httpd/conf/httpd.conf
 RUN sed -i 's/^#LogLevel INFO/LogLevel INFO/' /etc/ssh/sshd_config
 
 COPY ./app/ /var/www/html/
-COPY ./app/ /var/www/backup_html/
 COPY ./seo_app/ /home/seo/public_html/
 COPY ./kikuchi_app /home/kikuchi/public_html/
 RUN chown -R apache:apache /var/www/html/
-RUN chown -R apache:apache /var/www/backup_html/
 RUN chown -R apache:apache /home/seo/public_html/
 RUN chown -R apache:apache /home/kikuchi/public_html/
 
