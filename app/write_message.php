@@ -1,13 +1,13 @@
 <?php
-  # 禁止文字列が含まれていないかチェック
+  # check bad str
   $check_username = strpos(@$_POST["username"], "unko");
 
   if ($check_username === false){
-    # メッセージの書き出し
+    # writing message
     $file_path = "message/" . @$_POST["username"];
     $write_flag = file_put_contents($file_path, @$_POST["message"] . "\n", FILE_APPEND);
 
-    # ログ出力
+    # writing log
     $time_data = time();
     $log_text = "[w] " . date('Y:m:d:H:i:s', $time_data) . " " . htmlspecialchars(@$_POST["username"]) . "\n";
     $message_log_path = "log/message.log";
