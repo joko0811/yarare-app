@@ -1,7 +1,7 @@
 #!/bin/bash
 
-users=("kikuchi" "seo")
-passwords=("k1kuCh@n" "SE0_E!6!6Ect")
+users=("manage" "kikuchi" "seo")
+passwords=("manage" "k1kuCh@n" "SE0_E!6!6Ect")
 
 for i in ${!users[@]}
 do

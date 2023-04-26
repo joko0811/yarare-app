@@ -9,9 +9,9 @@ services:
     ports:
       - 80:80
       - 20022:20022
-    volumes:
-      - ./app:/var/www/html/
-      - ./app:/var/www/backup_html/
-      - ./seo_app:/home/seo/public_html/
-      - ./kikuchi_app:/home/kikuchi/public_html/
+#     volumes:
+#       - ./app:/var/www/html/
+#       - ./app:/var/www/backup_html/
+#       - ./seo_app:/home/seo/public_html/
+#       - ./kikuchi_app:/home/kikuchi/public_html/
     command: /sbin/init
